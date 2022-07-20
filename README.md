@@ -110,7 +110,7 @@ nth node. At the end, the last node will point to a null value.
 
 - The first node is called the head, and the last node is called the tail. Below visualizes a singly linked list.
 
-** A linked list has a number of useful applications:**
+**A linked list has a number of useful applications:**
 
 - Implement stacks, queues, and hash tables
 
