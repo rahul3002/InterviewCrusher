@@ -648,26 +648,25 @@ public static int[] doInsertionSort(int[] input){
     }
 ```
 ## Binary search
-Binary search is the most efficient searching algorithm to find an element. The algorithm works by comparing the middle element of an array or list to the target element. If the values are the same, the index of the element will be returned. If not, the list will be cut in half.
 
-If the target value were less than the middle value, the new list would be the left half. If the target value were greater than the middle value, the new list would be the right half.
+- Binary search is the most efficient searching algorithm to find an element. The algorithm works by comparing the middle element of an array or list to the target element. If the values are the same, the index of the element will be returned. If not, the list will be cut in half.
 
-This process continues where you keep splitting a list and searching one of the halves until the search algorithm finds the target value and returns the position. The runtime complexity of this algorithm is O(log2n)
+- If the target value were less than the middle value, the new list would be the left half. If the target value were greater than the middle value, the new list would be the right half.
+
+- This process continues where you keep splitting a list and searching one of the halves until the search algorithm finds the target value and returns the position. The runtime complexity of this algorithm is O(log2n)
 O(log2n)
-. It’s important to note that binary search only works if the list is already sorted.
 
-To visualize a binary search, let’s say that you have a sorted array with ten elements, and you are looking for an index of 33.
+- It’s important to note that binary search only works if the list is already sorted.
 
-svg viewer
-The middle value of this array is 16, and the algorithm compares it to 33. 33 is greater than 16, so the algorithm splits the array and searches in the second half.
+- To visualize a binary search, let’s say that you have a sorted array with ten elements, and you are looking for an index of 33.
 
-svg viewer
-The new middle value is 28. Because 33 is greater than 28, the algorithm searches in the second half of the array.
+- The middle value of this array is 16, and the algorithm compares it to 33. 33 is greater than 16, so the algorithm splits the array and searches in the second half.
 
-svg viewer
-After the array is split once again into the right half, the new middle value is 33. The algorithm sees that the middle value and the target value are the same and returns the position of the element.
+- The new middle value is 28. Because 33 is greater than 28, the algorithm searches in the second half of the array.
 
-Implementing binary search:
+- After the array is split once again into the right half, the new middle value is 33. The algorithm sees that the middle value and the target value are the same and returns the position of the element.
+
+**Implementing binary search:**
 
 ```
 int binarySearch(int arr[], int l, int r, int x) 
