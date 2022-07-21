@@ -104,25 +104,23 @@ intArray[13] = 14;
 
 
 
-Linked lists
-A linked list is a linear sequence of nodes that are linked together. Each node contains a value and a pointer to the next node in the list. Unlike arrays, linked lists do not have indexes, so you must start at the first node and traverse through each node until you get to the n
-n
-th node. At the end, the last node will point to a null value.
+## Linked lists
+- A linked list is a linear sequence of nodes that are linked together. Each node contains a value and a pointer to the next node in the list. Unlike arrays, linked lists do not have indexes, so you must start at the first node and traverse through each node until you get to the n
+nth node. At the end, the last node will point to a null value.
 
-The first node is called the head, and the last node is called the tail. Below visualizes a singly linked list.
+- The first node is called the head, and the last node is called the tail. Below visualizes a singly linked list.
 
-svg viewer
-A linked list has a number of useful applications:
+** A linked list has a number of useful applications:**
 
-Implement stacks, queues, and hash tables
+- Implement stacks, queues, and hash tables
 
-Create directories
+- Create directories
 
-Polynomial representation and arithmetic operations
+- Polynomial representation and arithmetic operations
 
-Dynamic memory allocation
+- Dynamic memory allocation
 
-Basic implementation of a linked list in Java:
+- Basic implementation of a linked list in Java:
 
 ``` 
 
