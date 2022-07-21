@@ -399,19 +399,14 @@ class Queue
 - Generate binary numbers from 1 to n using a queue
 
 
-Graphs
-A graph is a collection of vertices (nodes) that are connected by edges, creating a network.
+## Graphs
+- A graph is a collection of vertices (nodes) that are connected by edges, creating a network.
+- In the example above, the set of vertices are (12, 2, 4, 18, 23) and the edges are (12-2, 12-4, 2-4, 4-18, 4-23, 18-23, 2-18).
+- Graphs are very versatile data structures that can solve a plethora of real-world problems. Graphs are often used in social networks like LinkedIn or Facebook. With GraphQL on the rise, data is being organized as graphs, or networks.
 
-svg viewer
-In the example above, the set of vertices are (12, 2, 4, 18, 23) and the edges are (12-2, 12-4, 2-4, 4-18, 4-23, 18-23, 2-18).
-
-Graphs are very versatile data structures that can solve a plethora of real-world problems. Graphs are often used in social networks like LinkedIn or Facebook. With GraphQL on the rise, data is being organized as graphs, or networks.
-
-Basic implementation of a graph:
-
-22232425262728293031323334353637383940414243444546474849
+**Basic implementation of a graph:**
+```
 import java.util.*; 
-  
 class Graph { 
       
     // A utility function to add an edge in an 
@@ -420,98 +415,118 @@ class Graph {
                         int u, int v) 
     { 
         adj.get(u).add(v); 
+        adj.get(v).add(u); 
+    } 
+  
+    // A utility function to print the adjacency list 
+    // representation of graph 
+    static void printGraph(ArrayList<ArrayList<Integer> > adj) 
+    { 
+        for (int i = 0; i < adj.size(); i++) { 
+            System.out.println("\nAdjacency list of vertex" + i); 
+            for (int j = 0; j < adj.get(i).size(); j++) { 
+                System.out.print(" -> "+adj.get(i).get(j)); 
+            } 
+            System.out.println(); 
+        } 
+    } 
+  
+    // Driver Code 
+    public static void main(String[] args) 
+    { 
+        // Creating a graph with 5 vertices 
+        int V = 5; 
+        ArrayList<ArrayList<Integer> > adj  
+                    = new ArrayList<ArrayList<Integer> >(V); 
+          
+        for (int i = 0; i < V; i++) 
+            adj.add(new ArrayList<Integer>()); 
+  
+        // Adding edges one by one 
+        addEdge(adj, 0, 1); 
+        addEdge(adj, 0, 4); 
+        addEdge(adj, 1, 2); 
+        addEdge(adj, 1, 3); 
+        addEdge(adj, 1, 4); 
+        addEdge(adj, 2, 3); 
+        addEdge(adj, 3, 4); 
+          
+        printGraph(adj); 
+    } 
+} 
+```
+
+**Common interview questions:**
+
+- Find shortest path between two vertices
+
+- Check if a path exists between two vertices
+
+- Find “mother vertex” in a graph
 
 
-Run
-Common interview questions:
+## Hash tables
+- What’s hashing? Before we dive into hash tables, it’s essential to understand what hashing is.
 
-Find shortest path between two vertices
+- Hashing is the process of assigning an object into a unique index, known as a key. Each object is identified using a key-value pair, and the collection of objects is known as a dictionary.
 
-Check if a path exists between two vertices
+- A hash table is implemented by storing elements in an array and identifying them through a key. A hash function takes in a key and returns an index for which the value is stored.
 
-Find “mother vertex” in a graph
+- So, whenever you input the key into the hash function, it will always return the same index, which will identify the associated element. Furthermore, if the hash function ever receives a unique key that returns an already used index, you can create a chain of elements with a linked list.
 
+**A hash table has a number of useful applications:**
 
-Hash tables
-What’s hashing? Before we dive into hash tables, it’s essential to understand what hashing is.
+- When a resource is shared by multiple consumers
 
-Hashing is the process of assigning an object into a unique index, known as a key. Each object is identified using a key-value pair, and the collection of objects is known as a dictionary.
+- Password verification
 
-A hash table is implemented by storing elements in an array and identifying them through a key. A hash function takes in a key and returns an index for which the value is stored.
+- Linking file name and path
 
-So, whenever you input the key into the hash function, it will always return the same index, which will identify the associated element. Furthermore, if the hash function ever receives a unique key that returns an already used index, you can create a chain of elements with a linked list.
+- Common interview questions:
 
-svg viewer
-A hash table has a number of useful applications:
+- Find symmetric pairs in an array
 
-When a resource is shared by multiple consumers
-
-Password verification
-
-Linking file name and path
-
-Common interview questions:
-
-Find symmetric pairs in an array
-
-Union and intersection of lists using hashing
+- Union and intersection of lists using hashing
 
 
-Binary search tree
-A binary search tree is a binary tree data structure made up of nodes. The nodes are arranged with the following properties:
+## Binary search tree
+- A binary search tree is a binary tree data structure made up of nodes. The nodes are arranged with the following properties:
 
-The left subnode always contains values less than the parent node.
+- The left subnode always contains values less than the parent node.
 
-The right subnode always contains values greater than the parent node.
+- The right subnode always contains values greater than the parent node.
 
-Both subnodes will also be binary search trees.
+- Both subnodes will also be binary search trees.
 
-Binary search trees are used in many search applications and also used to determine objects that need to be rendered in a 3D game. This data structure is widely used in engineer projects because hierarchical data is so common.
+- Binary search trees are used in many search applications and also used to determine objects that need to be rendered in a 3D game. This data structure is widely used in engineer projects because hierarchical data is so common.
 
-svg viewer
-Example of a binary search tree
-Common operations:
+**Example of a binary search tree**
 
-Search - searches for an element
+**Common operations:**
 
-Insert - inserts an element in the tree
+- Search - searches for an element
 
-Pre-order traversal - traverses the tree in a pre-order way
+- Insert - inserts an element in the tree
 
-In-order traversal - traverses the tree in an in-order way
+- Pre-order traversal - traverses the tree in a pre-order way
 
-Post-order traversal - traverses the tree in a post-order way
+- In-order traversal - traverses the tree in an in-order way
 
-Common interview questions:
+- Post-order traversal - traverses the tree in a post-order way
 
-Find kth maximum value in a binary search tree
+- Common interview questions:
 
-Find the minimum value in a binary search tree
+- Find kth maximum value in a binary search tree
 
-Traverse a given directory using breadth first search
+- Find the minimum value in a binary search tree
 
+- Traverse a given directory using breadth first search
 
-Get hands-on with coding interviews.
-Start learning today. Cancel any time.
+## Recursion
+- Recursion is the practice in which a function calls itself directly or indirectly. The corresponding function that is called is known as the recursive function. While recursion is often associated as an algorithm, it may help to understand it as a way or methodology to solve a problem.
 
-Cover
-Grokking the Coding Interview: Patterns for Coding Questions
-Intermediate
-
-Certificate included
-
-
-Preview
-widget
-
-
-Important algorithms to learn
-Recursion
-Recursion is the practice in which a function calls itself directly or indirectly. The corresponding function that is called is known as the recursive function. While recursion is often associated as an algorithm, it may help to understand it as a way or methodology to solve a problem.
-
-So why is recursion useful? Or what even is it? Let’s look at how we can use recursion to calculate factorials as an example.
-
-1234567
+- So why is recursion useful? Or what even is it? Let’s look at how we can use recursion to calculate factorials as an example.
+```
 public static long factorial(int number){        
         //base case - factorial of 0 or 1 is 1
         if(number <=1){
@@ -519,62 +534,36 @@ public static long factorial(int number){
         }        
         return number*factorial(number - 1);
     }
-In the example above, the function starts at a number n
-n
-. When the function is called, it will call factorial(n - 1)
-factorial(n−1)
-. Say the n
-n
- value is 4; the function will return
+```
+- In the example above, the function starts at a number n When the function is called, it will call factorial(n - 1)
+factorial(n−1) Say the n nvalue is 4; the function will return
 
-4 * factorial(3) -> 4 * 3 * factorial(2) -> 4 * 3 * 2 * factorial(1)
-4∗factorial(3)−>4∗3∗factorial(2)−>4∗3∗2∗factorial(1)
+- 4 *factorial(3) -> 4 * 3 * factorial(2) -> 4 * 3 * 2 * factorial(1)
 
-Once n = 1
-n=1
-, the function will return factorial(1) = 1
-factorial(1)=1
-, and we get factorial(4)
-factorial(4)
- equal to 4 * 3 * 2 * 1
-4∗3∗2∗1
-, which is 24.
+- Once n = 1, the function will return factorial(1) = 1, and we get factorial(4) equal to 4 * 3 * 2 * 1, which is 24.
 
-Here, you can see the power of recursion. It’s a widely used practice of solving a complex problem by breaking it into smaller instances of the problem until we can solve it. Using recursion, you can simplify a lot of complex problems that would be difficult otherwise.
+- Here, you can see the power of recursion. It’s a widely used practice of solving a complex problem by breaking it into smaller instances of the problem until we can solve it. Using recursion, you can simplify a lot of complex problems that would be difficult otherwise.
 
 
-Bubble sort
-Bubble sort is a simple sorting algorithm that swaps adjacent elements if they are in an incorrect order. The algorithm will iterate through an array multiple times until the elements are in the correct order.
+## Bubble sort
+- Bubble sort is a simple sorting algorithm that swaps adjacent elements if they are in an incorrect order. The algorithm will iterate through an array multiple times until the elements are in the correct order.
 
-Say, we have an array as seen below.
+- Say, we have an array as seen below.
 
-svg viewer
-As the algorithm scans the array from left to right for the first iteration, starting at index 0, it compares index i
-i
- with index i + 1
-i+1
-. At index 1, it will see that 11 is greater than 6 and swap the two.
+- As the algorithm scans the array from left to right for the first iteration, starting at index 0, it compares index i
+i with index i + 1 At index 1, it will see that 11 is greater than 6 and swap the two.
 
-svg viewer
-As the algorithm continues scanning for the first iteration, it will see that 13 is greater than 10 and swap the two.
+- As the algorithm continues scanning for the first iteration, it will see that 13 is greater than 10 and swap the two.
 
-svg viewer
-Next, it will go through the array for its second iteration. It will swap the values in index 2 and 3 when it sees that 11 is greater than 10.
+- Next, it will go through the array for its second iteration. It will swap the values in index 2 and 3 when it sees that 11 is greater than 10.
 
-svg viewer
-The algorithm will scan the array for the third iteration, and because it does not need to make any more swaps for the third iteration, the algorithm will end.
+- The algorithm will scan the array for the third iteration, and because it does not need to make any more swaps for the third iteration, the algorithm will end.
 
-svg viewer
-As you can see, bubble sort can perform poorly when working with a lot more elements, making it primarily used as simply an educational tool. It has a runtime complexity of O(n^2
-n 
-2
- 
-).
+- As you can see, bubble sort can perform poorly when working with a lot more elements, making it primarily used as simply an educational tool. It has a runtime complexity of O(n^2).
 
 
-Implementing bubble sort:
-
-12345678910111213
+**Implementing bubble sort:**
+```
 public static void bubble_srt(int array[]) {
         int n = array.length;
         int k;
@@ -585,32 +574,26 @@ public static void bubble_srt(int array[]) {
                     swapNumbers(i, k, array);
                 }
             }
+            printNumbers(array);
+        }
+    }
+```
 
+## Selection sort
+- Selection sort is an algorithm that splits a collection of elements into sorted and unsorted. During each iteration, the algorithm finds the smallest element in the unsorted group and moves it to the end of the sorted group.
 
-Selection sort
-Selection sort is an algorithm that splits a collection of elements into sorted and unsorted. During each iteration, the algorithm finds the smallest element in the unsorted group and moves it to the end of the sorted group.
+**Let’s look at an example:**
 
-Let’s look at an example:
+- At first, all elements are unsorted. For the first iteration, the algorithm will go through each element and will identify 4 as the smallest value. The algorithm will swap the 11, the first element in the unsorted group with the lowest element in the unsorted group, 4.
 
-svg viewer
-At first, all elements are unsorted. For the first iteration, the algorithm will go through each element and will identify 4 as the smallest value. The algorithm will swap the 11, the first element in the unsorted group with the lowest element in the unsorted group, 4.
+- Now, the sorted group is index 0, and the unsorted group is index 1 to index 3. For the second iteration, the algorithm will start at index 1 and scan the array, identifying 6 as the lowest value in the unsorted group. It will swap 11 and 6.
 
-svg viewer
-Now, the sorted group is index 0, and the unsorted group is index 1 to index 3. For the second iteration, the algorithm will start at index 1 and scan the array, identifying 6 as the lowest value in the unsorted group. It will swap 11 and 6.
+- The sorted group is now index 0 to index 1, and the unsorted group is index 2 to index 3. For the third iteration, the algorithm will start at index 2, and find 11 as the lowest value. Because 11 is already in the right index, it will not move. With this, the algorithm ends.
 
-svg viewer
-The sorted group is now index 0 to index 1, and the unsorted group is index 2 to index 3. For the third iteration, the algorithm will start at index 2, and find 11 as the lowest value. Because 11 is already in the right index, it will not move. With this, the algorithm ends.
+- Similar to bubble sort, selection sort is often a slow algorithm. It also has a runtime complexity of O(n^2).
 
-svg viewer
-Similar to bubble sort, selection sort is often a slow algorithm. It also has a runtime complexity of O(n^2
-n 
-2
- 
-).
-
-Implementing selection sort:
-
-12345678910111213141516
+**Implementing selection sort:**
+```
 public static int[] doSelectionSort(int[] arr){
          
         for (int i = 0; i < arr.length - 1; i++)
@@ -621,28 +604,31 @@ public static int[] doSelectionSort(int[] arr){
                     index = j;
       
             int smallerNumber = arr[index];  
+            arr[index] = arr[i];
+            arr[i] = smallerNumber;
+        }
+        return arr;
+    }
+}
+```
+## Insertion Sort
+- Insertion sort is a simple sorting algorithm that builds the final array by sorting an element one at a time. How does it work?
 
+- Examines each element and compare it to the sorted elements on the left
 
-Insertion Sort
-Insertion sort is a simple sorting algorithm that builds the final array by sorting an element one at a time. How does it work?
-
-Examines each element and compare it to the sorted elements on the left
-
-Inserts the item in the correct order for the sorted elements
+- Inserts the item in the correct order for the sorted elements
 
 Let’s look at an example.
 
-svg viewer
-The algorithm starts at index 0 with the value 11. Because there are no elements to the left of 11, it stays where it is. Now, onto index 1. The value to the left of it is 11, which means we swap 11 and 4.
 
-svg viewer
-Again, the algorithm looks to the left of 4. Because there is no element to the left of 4, it stays where it is. Next, onto index 2. The element with the value 6 looks to left. Because it’s less than 11, the two switch.
+- The algorithm starts at index 0 with the value 11. Because there are no elements to the left of 11, it stays where it is. Now, onto index 1. The value to the left of it is 11, which means we swap 11 and 4.
 
-svg viewer
-The element 6 looks to the left again, but because 4 is less than 6, it stays where it is. Next, we go to the element at index 4. The algorithm looks to the left, but because 11 is less than 13, it stays where it is. Now, the algorithm is done.
+- Again, the algorithm looks to the left of 4. Because there is no element to the left of 4, it stays where it is. Next, onto index 2. The element with the value 6 looks to left. Because it’s less than 11, the two switch.
 
-svg viewer
-Insertion sort is almost always more efficient than bubble sort and selection sort, so it’s used more often when working with a small number of elements. Similar to the two other sorting algorithms, insertion sort also has a quadratic runtime of O(n^2).
+
+- The element 6 looks to the left again, but because 4 is less than 6, it stays where it is. Next, we go to the element at index 4. The algorithm looks to the left, but because 11 is less than 13, it stays where it is. Now, the algorithm is done.
+
+- Insertion sort is almost always more efficient than bubble sort and selection sort, so it’s used more often when working with a small number of elements. Similar to the two other sorting algorithms, insertion sort also has a quadratic runtime of O(n^2).
 
 Implementing insertion sort:
 ```
