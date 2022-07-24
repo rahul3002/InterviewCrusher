@@ -191,6 +191,93 @@ There are many operating systems out there, many that you probably haven’t eve
 - Only works when connected to the node network
 - Expensive to set up
 
+# Real-time operating system
+
+- This operating system gives each program a given period, with any program that would exceed that processing time being rejected. This maintains a strict schedule of processes to ensure certain high importance tasks can always be performed at a moment’s notice.
+
+- Real-time systems differ from time-sharing systems in how many processes can be completed at once. Real-time operating systems complete only one process at a time within a certain period. The process is interrupted if the processing time exceeds its dedicated period. Time-sharing systems, on the other hand, switch focus between multiple processes and are allowed to take multiple quantums to complete.
+
+- These systems are widely used when responsiveness and strict schedules are essential, such as in equipment for scientific experiments, air traffic control systems, or defense systems.
+
+- When writing programs for a real-time system, you must know how long each period is in your system and ensure your program is small enough to complete within that period.
+
+**Advantages:**
+
+- Optimal resource use for each process
+- Very fast response time, usually just 3 microseconds
+- Small program size allows them to be embedded within other systems
+- Few errors
+
+**Disadvantages:**
+
+- Only runs one process at a time
+- Achieving maximum efficiency is resource-intensive
+- Difficult to program for, each program must have interruptor conditions throughout the program that stop the process if the period ends
+
+## Advanced OS concepts
+
+## Process scheduling
+
+- The CPU scheduler component in the resource allocation service can use one of 6 algorithms to decide on which process completes first. Each of these algorithms is either preemptive or non-preemptive.
+
+- Preemptive schedulers use a priority system to influence processing. High-priority processes are scheduled as soon as they reach the ready stage, even if another process is currently running. If this happens, the high-priority process overrules the lower priority process.
+
+### Below are the 3 common preemptive scheduling algorithms:
+
+- Shortest remaining time (SRT): The processor prioritizes processes closest to completion. If a new process is added that has a lower completion time than the current process, the new process is executed first. This is often used with batch OS systems.
+
+- Round-robin scheduling: The processor rotates each process, allowing each a quantum of time processing. The process is interrupted once the quantum is over and is then preempted by the next process. This algorithm is the foundation of time-sharing operating systems.
+
+- Multiple-Level Queues Scheduling: Processes are broken into separate queues, each with different scheduling algorithms. The processor alternates between each queue and assigns processes based on the algorithm of their home queue. This is often used when one system handles vastly different processes that each call for a unique algorithm.
+
+- Non-preemptive schedulers don’t allow interruptions. Instead, a process cannot be preempted once it has started. They may still use a priority system but high-priority processes must still wait until the current process is complete before beginning.
+
+- **First in, first out (FIFO):** The processor completes processes in the order they came in. This is the simplest algorithm to implement but also results in the slowest average processing time.
+
+- **Shortest job next (SJN):** The processor always queues the next shortest job. This algorithm produces a very low processing time but cannot be implemented unless both the duration of CPU availability and the processing time of each process are known. SJN is the non-preemptive equivalent of the shortest remaining time and is also used in batch OS systems.
+
+- **Priority-based scheduling:** Each process is assigned a priority based on a preset resource-based factor such as memory usage or processing time. Processes are then completed by the CPU in order of their priority. If multiple processes have the same priority, the CPU executes them using the FIFO algorithm. This is one of the most widely used scheduling algorithms.
+
+
+## Threads and multithreading
+
+- A thread is the smallest sequence of programmed instructions and is the main component of any process. Each thread completes a particular command. When all threads are complete, the process has been fully executed.
+
+- Multiple threads can exist in one process and each share data and memory space between all threads in the process. Threads can be completed one at a time or concurrently using either context switching or multiple CPU cores.
+
+## Processes vs. Threads
+
+Processes	Threads
+ | Processes are independent | Threads are a subset of processes|
+| Processes carry more unique information than threads | Multiple threads within a process share resources |
+| Processes have separate memory addresses	| Threads share their address space |
+|Processes context switch relatively slowly	| Threads context switch quickly|
+
+## Virtualization
+
+- Virtualization is the technique of making virtual objects that behave as hardware, such as the switching ability of time-sharing operating systems. The time-sharing OS can complete multiple processes simultaneously by switching between them rapidly.
+
+- Normally, a computer would need two individual CPUs to complete processes concurrently. As a result, a time-sharing OS achieves virtualization by using rapid process switching to emulate an additional CPU.
+
+- Virtualization can simulate entire OS instances with individually assigned sections of the host resources, data, and devices for each container. These containers are isolated from the host machine and all other hosted virtual machines (VMs). This larger scale of virtualization is called operating-system-virtualization or, more commonly, containerization.
+
+- Programs run on these containers as though they are a true operating system. They access resources allocated to the container and execute processes using a containerized scheduler.
+
+- Virtualization, therefore, grants the ability to run multiple concurrent programs in separate containers while all being hosted on the same physical machine.
+
+- This gives developers a high level of control over OS container environments. By controlling container environments, developers can test programs on different kinds of operating systems or simulate hardware environments all on the same machine. Also, programs are more efficient when using concurrent programs across multiple VMs.
+
+**Advantages:**
+
+- Access to multiple operating systems on the same physical machine
+- Isolated failure, the host system will continue to function even if one or more of the hosted VMs crash
+- Virtual machines are secure, malware is quarantined to individual VMs and cannot damage other OS containers
+- Lower maintenance cost than an equivalent number of physical machines
+
+**Disadvantages:**
+
+- VMs are less efficient than equivalent physical machines as VMs must indirectly request hardware use through the host OS
+- Resources are divided among different VMs meaning most machines can only efficiently run a few at a time
 
 
 
