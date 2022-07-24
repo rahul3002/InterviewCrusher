@@ -247,11 +247,15 @@ There are many operating systems out there, many that you probably haven’t eve
 
 ## Processes vs. Threads
 
-Processes	Threads
- | Processes are independent | Threads are a subset of processes|
-| Processes carry more unique information than threads | Multiple threads within a process share resources |
-| Processes have separate memory addresses	| Threads share their address space |
-|Processes context switch relatively slowly	| Threads context switch quickly|
+
+Processes    | Threads
+------------- | -------------
+Processes are independent  | Threads are a subset of processes
+Processes carry more unique information than threads | Multiple threads within a process share resources
+Processes have separate memory addresses	| Threads share their address space
+Processes context switch relatively slowly.|Threads context switch quickly
+
+
 
 ## Virtualization
 
@@ -278,6 +282,4 @@ Processes	Threads
 
 - VMs are less efficient than equivalent physical machines as VMs must indirectly request hardware use through the host OS
 - Resources are divided among different VMs meaning most machines can only efficiently run a few at a time
-
-
 
