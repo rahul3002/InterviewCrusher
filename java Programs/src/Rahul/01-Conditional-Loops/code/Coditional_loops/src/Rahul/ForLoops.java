@@ -35,6 +35,6 @@ public class ForLoops {
             System.out.println(a);
             System.out.print(" Hello World ");
             a++;
-        } while(a <= 5);// 
+        } while(a <= 5);//
     }
 }
