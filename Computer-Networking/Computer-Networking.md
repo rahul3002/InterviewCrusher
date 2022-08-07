@@ -81,3 +81,28 @@ These protocols function like data delivery rules, affecting the speed of delive
 - Email
 - World Wide Web (HTTP, HTTPS)
 - Generally, applications that call for high reliability where speed is the primary concern.
+
+## UCP (User Datagram Protocol)
+
+**Pros:**
+
+- Faster than TCP.
+- Simple in its transmission, limited data management.
+- Supports broadcasting tasks.
+
+**Cons:**
+
+- Unreliable, cannot guarantee packet delivery due to being datagram-oriented rather than connection-oriented.
+- No retransmission of lost data packets.
+- Minimal error checking.
+- No sequencing, packets may arrive out of order.
+- Can overload the receiver, only stops sending data once the task is completed.
+
+**Common Uses:**
+
+- Video Streaming
+- Online Gaming
+- Generally, applications that rely on the speed of data reception.
+
+Other important protocols are the IP (Internet Protocol) which allows devices to be identified and sought through unique IP addresses, and HTTP (HyperText Transfer Protocol) which allows devices to request and transfer data between devices.
+
