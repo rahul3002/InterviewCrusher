@@ -106,3 +106,67 @@ These protocols function like data delivery rules, affecting the speed of delive
 
 Other important protocols are the IP (Internet Protocol) which allows devices to be identified and sought through unique IP addresses, and HTTP (HyperText Transfer Protocol) which allows devices to request and transfer data between devices.
 
+
+
+
+'' OSI (Open Systems Interconnection model)
+Protocols like those above work thanks to the OSI model, a conceptual model which ensures systems are standardized to communicate in the same manner and are all organized into partitions of seven layers: Physical, Data Link, Network, Transport, Session, Presentation, and Application. ''
+
+## Hubs and Switches
+
+Both hubs and switches act as a connection point between devices in a network. Both will usually use a wired connection but are increasingly featuring wireless connectivity. Where they differ is how they disperse data through the network after it is received from a device.
+
+A Hub is quick but indiscriminate; when it receives a data packet, it will copy it and quickly send it to every device connected to it.
+A Switch is slower but more careful; when it receives a data packet, it determines which device(s) in its system the data is intended for then sends the data to those select devices.
+Hubs are best used when all devices would benefit from receiving all the data. In contrast, switches should be used when many different types of devices are on the network or the data is sensitive and should not be forwarded indiscriminately.
+
+
+## Routers
+
+If we think of LANs as towns and hubs/switches as our town halls, then routers would be the roads that connect them. Located at gateways, the intersect point between two or more networks, these devices sort and forward data packets to the correct destination between two or more separate networks.
+
+This knowledge is essential as most systems will require not one large network but rather smooth interworking between multiple separate networks. The advantage of dividing systems this way is twofold: it minimizes the device load on any individual network and also keeps all data immediately accessible to devices where it is most pertinent.
+
+When planning a network or later in a systems design interview, it’s essential to define:
+
+- how your system would be split into sub-networks
+- what interconnection these networks would need with each other and external systems
+- how routers should be set up to ensure system efficiency.
+
+## Latency Cost of Routers
+
+Connections across router bridges between networks will have higher latency than in-network connections; to improve efficiency, put devices the work together frequently or require swift transfers on the same network rather than passing the data across router bridges.
+
+Now that you have an understanding of the tools which go into building a network, you can move to think about how you’d secure it. This is the central challenge facing network designers, by starting to consider it you take one step closer to becoming a network specialist!
+
+While blocking all connections to external systems is a simple and effective way to ensure, there are many times when a connection to external systems will be essential for a system to function effectively. In those cases, some types of firewalls and encryption are essential to minimize internal risk.
+
+
+## Firewalls
+
+One of the main tools for network security, firewalls act like a checkpoint where data passed to or from private networks is reviewed before being accepted or rejected. There are several types of security functions used by firewall programs. Most use two or more functions to provide variable security protections.
+
+
+## Web Application Firewall:
+
+The most common function, these applications are configured to block common types of attacks, such as Distributed Denial of Service (DDoS). These applications are simple and cheap but susceptible to novel forms of attack unfamiliar to the program.
+
+
+## Packet Filtering:
+
+This function reviews each data packet that passes through it, accepting or rejecting based on user-defined rules. These are effective but can be difficult to configure to block all possible threats.
+
+
+## Circuit-level Gateway Implementation:
+
+This function activates security sweeps when a new TCP/IP or UDP connection links up to the system. Once the check has been completed and the source is deemed secure, data can pass freely through without further checks.
+
+
+## Proxy Server:
+
+This function masks the network address of connected devices, directing all requests made through an alternative cover device. This provides an added level of anonymity and filtering, as the proxy device acts as a buffer, sending back only specified types of data to the source.
+
+Unfortunately, this function will slow network performance by adding an additional data node to travel through.
+
+
+
