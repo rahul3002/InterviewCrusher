@@ -168,5 +168,14 @@ This function masks the network address of connected devices, directing all requ
 
 Unfortunately, this function will slow network performance by adding an additional data node to travel through.
 
+## Encryption
+Regardless of how effective your initial firewalls are, there may be a time when they fail and data is stolen. To anticipate this, it’s helpful to have a second layer of security built into the system, usually in the form of data encryption.
+
+Encryption is the process of converting data (either in-flight and at-rest) into a form only readable by another authenticated system or device. If data is intercepted in transit by a device without the proper decryption keys, it remains unreadable and secure.
+
+When designing your system, consider the places where encryption will be needed. If a certain area in the system contains sensitive data, such as banking information, it may be wise to include multiple levels of encryption for added protection.
+
+While knowing what specific type of encryption protocol to use is unnecessary (as most companies have in-house policies), you can demonstrate thorough care for security by indicating which network connections will need to be encrypted based on the type of data they pass.
+
 
 
