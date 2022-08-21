@@ -1,4 +1,4 @@
-# Interview Prepration
+# Interview Prepration Journey
 
 # [Data Structures](https://github.com/rahul3002/Interviews/blob/main/DataStructures/DSA-Brushup-Skills.Md)
 
