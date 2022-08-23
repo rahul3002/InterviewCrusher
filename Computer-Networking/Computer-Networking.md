@@ -278,6 +278,123 @@ So your personal computer is connected to other computers at your house or workp
 
 And now here we are. In an age in which all our devices run on the Internet, even toasters for some – the era of the **Internet of Things** is here! Life without it seems almost inconceivable
 
+## Internet Standards Documents
+
+Standardization has allowed us to achieve interoperability. Different organizations and vendors can develop hardware and software to be connected to the Internet. Unless they agree on a protocol, their hardware and software wouldn’t be able to talk to each other. Standardization is all interested stakeholders sitting together, debating and agreeing on a protocol or design.
+
+Also, it’s important to know **what’s out there, who designed what and why.**
+
+Also, you’d know where to submit your ideas in case you come up with a better design for any of the protocols we’re going to study.
+
+## What Is an RFC?
 
 
+- An RFC or Request For Comments is a document that contains proposals for new protocols or systems.
 
+- Today, RFCs are submitted to and handled by the Internet Society which has a sub-body called the **Internet Engineering Task Force (IETF)**. This sub-body works on the standardization of Internet protocols and systems.
+
+- An RFC is then deliberated on by experts, revised and then hopefully, eventually adopted as a standard.
+
+## Who Writes RFCs?#
+- RFCs are generally written by those who work at IETF, Internet researchers, and specialists. However, an RFC can be written by anyone! Yes, even you can write one. Just write up your findings and submit them to the Internet society’s Independent Submissions page!
+
+- All Internet protocols, like the world wide web, are described by one or more RFCs.
+
+## History
+
+- RFCs were started by Steve Crocker to document details of ARPANET while it was being created. These documents were called Requests For Comments to encourage discussion and not seem too assertive. They used to be written on a typewriter and distributed around ARPA’s office as physical copies with requests for comments.
+
+## Contents of an RFC#
+- RFC’s generally start off with a header that contains the category of the document, its identification number, the name(s) of the author(s), and the date.
+- Then the document contains its title, a status, and an abstract.
+- Then a table of contents after which the document starts.
+- The document usually starts with an introduction.
+
+## Types of RFCs#
+
+### Standards Track#
+There are two kinds of standards documents: Proposed Standard, and Internet Standard.
+
+Proposed Standard documents are well reviewed and stable but not as mature as an Internet Standard document. Internet Standard documents are technically competent, practically applicable, and publicly recognized. Perhaps one of the most important standard documents that we know about from the Internet history lesson is the one on the Internet protocol, RFC 791.
+
+IETF has documented its internet standards process in RFC 2026. Have a look if you want to learn more about it.
+
+### Historic
+These RFCs are usually obsolete and contain details about technologies that are not in use anymore.
+
+### Unknown
+Some RFCs cannot be categorized or often do not specify any new standards or findings. These are categorized as unknown.
+
+You can browse all of these categories of RFCs on the RFC retrieve page.
+
+## What Is a Protocol?
+
+### An Analogy
+
+Let’s start with an analogy. Think of your routine conversations. They usually follow a general pattern dictated by predefined rules. For example, most conversations start with greetings and end with goodbyes. They probably go something like this:
+
+```
+        you : Hello
+        friend : Hey!
+...conversation ensues...
+        you : Bye!
+        friend : GoodBye:)
+```
+
+Turns out that end systems also follow such protocols to communicate with each other effectively on the network.
+
+Formally, according to the Oxford Dictionary, a protocol is “a set of rules governing the exchange or transmission of data between devices.” In the next few chapters, we’ll study several network protocols in detail.
+
+
+## TCP
+
+The **Transmission Control Protocol (TCP)** is one such protocol. It was created to allow end systems to communicate effectively. The distinguishing feature of TCP is that it ensures that data reaches the intended destination and is not corrupted along the way.
+
+## UDP
+The **User Datagram Protocol (UDP)** is also one such key protocol. However, it **does not ensure** that data reaches the destination and that it remains incorrupt.
+
+## HTTP
+**HyperText Transfer Protocol (HTTP)** is a web protocol that defines the format of messages to be exchanged between web clients, e.g., web browsers and web servers and what action is to be taken in response to the message. The World Wide Web uses this as its underlying protocol.
+
+## Packets
+
+Now that we’ve established that end systems communicate with each other based on set protocols, let’s discuss how they actually communicate. Computers send messages to each other that are made up of ones and zeros (bits).
+
+However, instead of sending messages of possibly trillions of bits all in one go, they’re broken down into smaller units called packets to make transmission more manageable. These smaller sizes make transmission more manageable because most links are shared by a few end-systems. Sending smaller units in succession instead of one big file all in one go makes usage of the network fairer amongst end-systems.
+
+## Addressing
+
+So, applications communicate with each other by sending messages based on protocols. However, packets have to be addressed to a certain application on a certain end system. How do you do that out of potentially millions of end systems and hundreds of applications on each of them? The answer lies in addressing.
+
+An address identifies a sending entity and a receiving entity.
+
+### IP Addresses
+
+
+- Every device that is connected to the Internet has an address called an ‘IP Address’ which is much like a mailing address.
+
+- IP addresses are 32 bit numbers (in IP version 4).
+
+- The human readable way for looking at these numbers is the dotted decimal notation, whereby the number is considered one octet of bits (8 bits) at a time. Those octets are read out in decimals, then separated by dots.
+
+- Hence, each number can be from 0 to 255. For example, 1.2.3.4.
+Some IP addresses are reserved for specific functions. We’ll discuss them in more depth in later lessons.
+
+Check yours by running the following command on a shell on your local setup.
+
+```
+curl ifconfig.me -s
+```
+## Ports
+
+Any host connected to the Internet could be running many network applications. In order to distinguish these applications, all bound to the same IP address, from one another, another form of addressing, known as **port numbers**, is used. Each endpoint in a communication session is identified with a unique IP address and port combination. This combination is also known as a **socket**. So in essence, ports help to address the packet to **specific applications** on hosts.
+
+- IP addresses identify end systems but ports identify an application on the end system.
+- Every application has a 16-bit port number. So the port number could range from O TO 2^16 =65535 .
+- The ports 0 to 1023 are reserved for specific applications and are called well-known ports.
+   - For instance, port 80 is reserved for HTTP traffic.
+- The ports 1024−49152 are known as registered ports and they are used by specific, potentially proprietary, applications that are known but not system defined.
+     - SQL server for example, uses port 1433
+
+     - It is generally considered best practice not to use these ports for any user defined applications although there is no technical restriction on using them.
+- The ports 49152–65535 can be used by user applications or for other purposes (dynamic port allocation for instance, but more on that later).
