@@ -398,3 +398,62 @@ Any host connected to the Internet could be running many network applications. I
 
      - It is generally considered best practice not to use these ports for any user defined applications although there is no technical restriction on using them.
 - The ports 49152–65535 can be used by user applications or for other purposes (dynamic port allocation for instance, but more on that later).
+
+## Access Networks
+
+ ## The Edge of The Internet: End Systems
+
+ So far, we know that the Internet is a network of networks. Each network is made up of devices, called **end systems**, connected to each other with communication links. Let’s look at each in more detail.
+
+## End Systems#
+       
+  End systems are devices that are connected to the Internet. They include:
+
+- Desktop computers
+- Servers
+- Mobile devices
+-  IoT devices.
+
+So, an end system can be anything from a rack server to an Internet-enabled toaster. These devices are **often also called edge systems** in networking jargon because they are technically situated at the ‘edge’ of the Internet since **they don’t relay data from one device to another**.
+
+## The Network Edge
+
+The **network edge** is simply the collection of end-systems that we use every day: smartphones, laptops, tablets, etc. However, note that **devices that relay messages (such as routers) are not part of the edge of the Internet**.
+
+## What Are Access Networks?
+
+## Access Networks
+
+Access networks, also known as **the last mile**, consist of the media through which end systems connect to the Internet. In other words, **access networks** are networks that physically **connect end systems to the first router** (also known as the “**edge router**”) on a path which connects them to some other end systems.
+
+## Network Interface Adapter
+
+The network interface adapter enables a computer to attach to a network. Since there are so many different types of networks, network adapters are used so that the user can install one to suit the network to which they want to attach.
+
+Network interfaces also usually have an address associated with them. One machine may have multiple such interfaces.
+
+These interfaces are essentially the physical gateways that connect devices to the Internet.
+
+Most machines then have external ports which network cables can be plugged into. The type of access network depends on the physical media involved. Here are some common access networks:
+
+- **Digital Subscriber Line (DSL)**
+- **Cable Internet**
+- **Fiber To The Home (FTTH)**
+- **Dial-Up**
+- **Satellite**
+- **WiFi**
+
+## Transmission Rates
+
+The rate at which data is transmitted from one point to another in a network is called the **transmission rate**. In other words, the speed of the network is its transmission rate.
+
+The smallest unit that digital data can be divided into is a bit: a 1 or a 0. Transmission rates are measured in units of **bits/sec**. However, since bits/sec is a really small unit, multiples/prefixes are commonly used. Common prefixes and their interpretation.
+
+
+For example, a speed of 240 Mbit/second means that 240,000,000 or 240 million bits get transmitted every second!
+
+There are essentially **two** ways that data flows in a network: from an end system or to an end system. The outgoing transmission rate is called the **upload rate**, and the incoming transmission rate is called the **download rate**.
+
+Some networks have varying upload and download transmission rates, called **asymmetric transmission rates**. This is useful because traffic going out from end hosts generally consists of small requests which solicit comparatively much larger responses.
+
+> Note You can check the upload and download transmission rate of your Internet connection from https://www.speedtest.net!
