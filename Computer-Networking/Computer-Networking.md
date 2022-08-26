@@ -457,3 +457,93 @@ There are essentially **two** ways that data flows in a network: from an end sys
 Some networks have varying upload and download transmission rates, called **asymmetric transmission rates**. This is useful because traffic going out from end hosts generally consists of small requests which solicit comparatively much larger responses.
 
 > Note You can check the upload and download transmission rate of your Internet connection from https://www.speedtest.net!
+
+
+## Types of Access Networks: Cable, FTTH, Dial-Up, and Satellite
+
+## Cable 
+
+-In the case of cable Internet, the TV cable company is the ISP and it relies on the preexisting infrastructure of cable TV to grant Internet access.
+
+- It runs on coaxial cable. Coaxial cable has enough of a frequency range to carry TV channels and a stream of upstream and downstream Internet.
+
+### Slower During Peak Hours 
+
+However, cable Internet can be slower during peak hours, when a majority of users are online at once. This is because cable Internet is a shared broadcast medium: every signal that comes from the ISP is sent to every single home regardless of which one it was meant for.
+
+## Hybrid Fiber Coax
+
+
+Usually, cable Internet works with a combination of coaxial cable and optic fiber (which we’ll discuss in the next chapter), where the fiber connects optical nodes that exist in every neighborhood to the ISP and coaxial cable further connects the nodes to the houses. This is sometimes referred to as a hybrid fiber coax (HFC). Have a look at the figure below to see how hybrid fiber coax works.
+
+## Transmission Rate
+According to DOCSIS 4.0, cable Internet can now operate in symmetric speeds (where both upstream and downstream channels have the same speed) of up to 10 gbps.
+
+## Fiber To The Home: FTTH
+
+Although DSL and cable Internet are incredibly popular, Fiber To The Home or FTTH is another access method. Optic fiber cables are claimed to be the cleanest method to transmit data.
+
+## Transmission Rate
+
+FTTH can be very fast – up to 2.5 gbps.
+
+## Satellite
+
+The Internet can also be accessed via satellites. This can be beneficial in remote areas where other physical access networks are not available.
+
+## Transmission Rate
+
+This would depend on a number of factors including the kind of satellite. Some setups can provide incredibly fast downlink and uplink connections, however, on average, the download rate is at around 
+1 mbps and the average upload rate 256 kbps.
+
+## Types by Physical Medium: Guided Physical Media
+
+## Communication Media
+
+Data needs to be transmitted from one end system to another over a medium. There are two kinds of media: **guided** and **unguided**. Each has its own advantages and disadvantages
+
+## Guided Media
+
+A  medium in which the signal is transported on a **confined pathway** is called guided. Some commonly used examples are given below.
+
+## Twisted Pair Copper Wire
+
+This kind of wire is used in DSL and Dial-Up. It consists of pairs of copper wires that are twisted together to reduce electrical interference. Each wire is about a milimeter thick and is one communication link. Generally, several pairs are bundled together in a protective plastic or rubber wrapping.
+
+## Coaxial Cable
+
+Cable Internet runs on coaxial cables. A coaxial cable consists of one copper wire surrounded by an insulating material, followed by a mesh-like cylindrical metallic shield, followed by another insulating cover.
+
+
+## Fiber Optics
+Fiber optic cables carry light instead of electrical signals.
+
+Metallic media suffer from electrical noise and interference from nearby electrical sources such as mains wiring. Since optical fiber carries signals in the form of light, it is **not susceptible to the abundant electrical noise and interference.**
+
+Interference from other light sources is easily mitigated by opaque covering around the optic fiber. Hence, these cables can have incredibly fast transmission rates and can be stretched out over long distances, unlike the rest.
+
+Optical fibers are frequently used in public and enterprise networks when the distance between the communication devices is larger than one kilometer
+
+There are two main types of optical fibers: multimode and single mode.
+
+### Multimode
+
+- Multimode uses LED to send signals.
+- Therefore it’s, significantly cheaper than counterpart.
+- It can work over several tens of kilometers.
+- Multiple light signals travel through the same optic fiber while reflecting off the edges of the fiber at different angles.
+
+### Monomode
+
+- Monomode uses laser for transmission.
+- It’s more expensive than multimode.
+- Monomode fibers can only work over a few kilometers.
+svg viewer
+fiber optic cable taken from https://commons.wikimedia.org/wiki/File:Optical_fiber_cable.jpg under CC-BY-SA 3.0
+- However, fiber optic has not dominated over the rest, because of the high cost of optical devices. However, fiber to the home is becoming increasingly common.
+
+Also, check out the Optical Carrier transmission rates. They specify the transmission rates of fiber optic cable. At the time of writing, they range from to 51.84 Mbit/sec to 200 Gbit/sec!
+
+### The Internet Is Under the Sea, Not in the Clouds!
+Most cross country connections, in fact, are made over fiber optic cable under the sea. If you’re more interested in how underwater cables work, here is an interesting YouTube video by Vox called “Thin underwater cables hold the Internet. See a map of them all.”
+
