@@ -547,3 +547,37 @@ Also, check out the Optical Carrier transmission rates. They specify the transmi
 ### The Internet Is Under the Sea, Not in the Clouds!
 Most cross country connections, in fact, are made over fiber optic cable under the sea. If you’re more interested in how underwater cables work, here is an interesting YouTube video by Vox called “Thin underwater cables hold the Internet. See a map of them all.”
 
+## Types by Physical Medium: Unguided Physical Media
+
+### Unguided Media
+
+Means of transmission that are not bound by a confined pathway are called unguided media, such as radio waves. Let’s discuss them in more detail.
+
+### Terrestrial Radio Channels
+
+Radio waves encompass a certain band of the electromagnetic spectrum. They provide many advantages, such as not needing to be physically wired through a building, the ability to cross physical barriers like walls and other objects, and allowing for end systems to be mobile. However, they also have some disadvantages: they’re considered to be less secure since interception is relatively easy.
+
+
+There are 3 kinds of terrestrial radio channels:
+
+- 1.The kind that operate over very short distances 1-2 meters (Bluetooth)
+
+- 2.The kind that operate over a few 10s to a few hundreds of meters (WiFi)
+
+- 3.Those that operate over a range of kilometers (3G, 4G, and LTE)
+
+The same infrastructure that provides access to cellphones provides access to the Internet. Users typically only need to be within a few kilometers of a base station to connect. Let’s look at a couple of examples.
+
+## Third-Generation Wireless (3G)
+
+Third-generation wireless, or 3G, allows wireless–wide area Internet access that utilizes existing telephone networks. It can provide speeds of in order of 1 Mbps.
+
+## Long-Term Evolution (LTE)#
+
+**Long-Term Evolution** or LTE is rooted in 3G technology, but is faster and can achieve transmission rates of 10s of Mbps. Don’t let the name confuse you, it is not technologically very different from 3G.
+
+## Free-space optical communication#
+
+Free space optical communication is a medium that **employs light to transmit data.** Among the many uses are: communication in space and in remote controls.
+
+In free space optics, lasers can be used to achieve high data rates. However, free space optics suffers from interference by factors like fog, dust particles and smog. Recently, researchers have demonstrated the utility of free space optics for high speed communication in data centers.
