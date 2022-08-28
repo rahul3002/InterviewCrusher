@@ -581,3 +581,150 @@ Third-generation wireless, or 3G, allows wireless–wide area Internet access th
 Free space optical communication is a medium that **employs light to transmit data.** Among the many uses are: communication in space and in remote controls.
 
 In free space optics, lasers can be used to achieve high data rates. However, free space optics suffers from interference by factors like fog, dust particles and smog. Recently, researchers have demonstrated the utility of free space optics for high speed communication in data centers.
+
+## Types by Geographical Distance
+
+## Introduction
+
+Computers or end systems are generally connected together to share resources and information such as an Internet connection and devices such as printers. These networks can be classified by the geographical distance that they span.
+
+## Local Area Networks (LANs)#
+
+A Local Area Network, or a LAN, is a computer network in a small area like a home, office, or school.
+
+> Note ‘small area’ does not imply anything about the number of end systems connected together – just the geographical area. A LAN can consist of hundreds or even thousands of systems.
+
+## Ethernet
+Most LANs consist of end hosts connected using Ethernet network adapters to Ethernet switches. Every Ethernet switch has a limited number of ports, and therefore can interconnect a limited number of end hosts. Larger networks within a building are built using multiple Ethernet switches interconnecting different sets of end hosts. These switches may then be connected to each other and the Internet
+
+## WiFi
+Increasingly, however, wireless Internet access has become very common. In Wireless LANs or WLANs, a wireless router interconnects different “subnets” and/or may have connectivity to the Internet, which it can extend to the hosts connected to it.
+
+## Metropolitan Area Network (MAN)
+A metropolitan area network (MAN) is a computer network that spans the geographical distance of a metropolitan area, such as a city. A MAN may also refer to a set of interconnected LANs via point-to-point links, for example, on a university network. Recently, wireless MANs have become increasingly common.
+
+## Wide Area Networks (WAN)
+Wide Area Networks or WANs refer to networks that allow interconnection across large distances. They may span over cities or even countries.
+
+WANs are typically optical fiber-based. Frame relay, ATM, and SONET/SDH are examples of technologies that may be in use.
+
+>Note The Internet itself is a whole lot of LANs, interconnected by means of MANs and WANs.
+
+## SONET/SDH#
+
+Synchronous optical networking (SONET) and the international equivalent, Synchronous Digital Hierarchy (SDH) carries data as optical signals over optical fiber, which means that they can cover large distances. These technologies are incredibly prevalent today.
+
+## Frame Relay
+A frame relay was a popular way to connect your LAN to the Internet or to provide an interconnection between LANs at two or more company sites.
+
+## Types by Topology
+
+Computer networks can also be categorized in terms of network topologies that you might have studied about in a high school computer science class. These topologies include:**bus, ring, star, tree, and mesh.** Note that these topologies are strictly logical, i.e., they do not dictate how the wires would be connected physically, but they do dictate how the data flows in the network.
+
+### Bus
+
+Every end system will receive any signal that is sent on the main or **backbone** medium. The medium can be guided or unguided.
+
+### Limitations
+
+- A break in the cable will disrupt the entire network.
+
+- Only one system can transmit at a time.
+
+
+## Ring
+
+In this topology, end systems communicate with each other through each other. So the message travels along the ring passing each system until the target system itself is reached. Theoretically, n/2 systems can be transmitting to their adjacent neighbor at the same time.
+
+## Limitations
+
+- The basic ring topology is unidirectional so n−1
+ end systems would have to transfer messages for end system #1 to talk to end system #n
+
+- A break in the cable will disrupt the entire network.
+
+## Star
+All end systems talk to each other through one central device such as a router or switch. Routers and switches are discussed in-depth in the data link layer chapter!
+
+### Limitations
+
+- Hosts can all be transmitting at the same time. 
+
+- However, if the central device fails, the network is completely down.
+
+## Tree
+
+This topology is also known as the **star-bus** topology. It essentially consists of a bunch of star networks connected together with a large bus.
+
+## Mesh
+In this topology, every end system is **directly connected** to every other end system.
+
+## Limitations
+
+The mesh topology (if physically realized as a mesh):
+
+- Is expensive
+- Hard to scale
+- Used in specialized applications only
+
+# Network Infrastructure: The OSI Model
+
+## Introduction to Layered Architectures
+
+When building a large complex system, it helps to approach the problem at gradually increasing levels of abstraction. Thus, systems can be composed of **layers,** each performing a specific set of tasks.
+
+### Why Layers?
+
+Layered architectures give us modularity by allowing us to discuss **specific, well-defined parts of larger systems.** This makes **changing implementation-level details** and **identifying bugs easier.**
+
+### An Analogy: Post
+
+Before we dive deep into different models of the network layer stack, let’s look at an interesting analogy.
+
+Think about posting a letter or a package. The general steps to doing so are as follows,
+
+Notice that a few things are in **parallel with computer networking here.** Here are some examples of how that is the case:
+
+### Layers As Services To Each Other: Layers Are Vertical
+
+**Each layer provides some services to the layer above it.** Furthermore, the layer above is **not concerned with the details of how the layer below performs its services.** This is called **abstraction.** So in this way, the layers communicate with each other in a vertical fashion.
+
+### Vertical Layers in Post
+
+In our letter analogy, each layer is servicing the layer above it. For instance, the postman provides services to the senders and receivers. They collect dropped letters from mailboxes and deliver mail to the houses.
+
+Furthermore, all a sender knows and cares about is that once they write a letter, put it in an envelope, stick a stamp on it and drop it in a letterbox, it will eventually be delivered at the destination. Whether it’s transported on pickup trucks, on railway trains or by air is irrelevant and immaterial to senders. So, how layer 4 does its job is irrelevant to the layers above, and that’s called **abstraction.**
+
+### Vertical Layers in Networks
+
+Similarly, computer networks are conceptually divided into layers that each serves the layer above and below it.
+
+- For example, the top layer in most layered models is called the **application layer.** End-user applications live in the application layer, which includes the web and email and are almost always implemented in software. The application layer is also where an outgoing message starts its journey.
+
+- The application needs an underlying service that can get application messages delivered from source to destination and bring back replies which is what the layer(s) after do(es).
+
+Since the underlying layer collects messages from the upper layer for delivery to the destination and hands over messages destined for the upper layer, **it serves the application layer.** Furthermore, the application layer abstracts, and hence is not concerned with any implementation details of the layers below.
+
+## Layers Communicate with Their Parallels: Layers Are Horizontal
+
+Note that each layer at the sending end has a parallel in the receiving end.
+
+Horizontal Layers in Post#
+In the post analogy, the letter writer and receiver appear to be in direct communication with each other. The writer writes, the reader reads, oblivious to the man-hours spent in the lower layers. Similarly, the post office at the sender’s side is in communication with some other post office. They cooperate in getting the letter delivered. At the lowest layer, there could be multiple hops. For instance, there is a bicycle pickup of letters from a box, delivered to the post office. Then, the letters are bundled and sent by pickup truck to an airport. The airport flies the postage to a different airport. The airport sends the postage to a post office by a pickup truck and the delivery ensues. Sometimes there are multiple entities horizontally, but we only see the sender and the receiver.
+
+## Horizontal Layers in Networks
+
+This makes more sense in the case of computer networks. For example, applications in the application layer send and receive data from the network. The application layer on one end system has a parallel on another end system, i.e., a chat app on one end system could be communicating with a chat app on another. **These applications in the application layer are seemingly communicating with each other directly or horizontally.** They are not aware of the layer below.
+
+## Layers Evolve Independently
+
+Any lower layer in this model provides certain services that the upper layer can build other services upon. The upper layer can evolve to build different kinds of services, like going from text-based email to attachments, to the world wide web, to dynamic websites, interactive gaming, interactive video conferencing and so on, all happening in the top layer over the same infrastructure.
+
+## Independent Evolution in Post
+
+- 1.For instance, the item being sent does not necessarily have to be a **letter** – It can also be a **package.**
+- 2.It can be put in an **envelope or a box.**
+- 3.It can be taken to the **post office, dropped off into a post box, or picked up.**
+- 4.The receiver’s end can be a **P.O. box, a home or an office.**
+
+
