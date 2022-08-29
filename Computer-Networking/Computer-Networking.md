@@ -727,4 +727,47 @@ Any lower layer in this model provides certain services that the upper layer can
 - 3.It can be taken to the **post office, dropped off into a post box, or picked up.**
 - 4.The receiver’s end can be a **P.O. box, a home or an office.**
 
+## Independent Evolution in Networks#
 
+The applications in the application layer can send and receive almost any form of data, be it an mp3 file or a word document.
+
+## Encapsulation & Decapsulation#
+
+Each layer adds its own header to the message coming from above and the receiving entity on the other end removes it. The information in each header is useful for transmitting the message to the layer above. Adding the header is called encapsulation and removing it is called decapsulation. Have a look at the following drawing to see how this works.
+
+We have not given names to these layers because we have not introduced them yet, but the general idea is depicted.
+
+## The Open Systems Interconnection (OSI) Model
+
+### Common Models#
+
+There are several models along which computer networks are organized. The two most common ones are the Open Systems Interconnection (OSI) model and the Transmission Control Protocol/Internet Protocol (TCP/IP) model.
+
+
+### The OSI Model
+The OSI Model was developed in the '70s by the Organization for Standardization (ISO). At this time, the Internet was in its infancy and its protocols had not fully matured. The OSI model provides a standard for different computer systems to be able to communicate with each other.
+
+The Layers of the OSI Model
+
+The model splits up a communication system into 7 abstract layers, stacked upon each other.
+
+Network protocols are implemented in software, hardware or a combination of both, and their hardware and software components are organized into these layers. So the main purpose of this ‘network stack’ is to understand how the components of these protocols fit into the stack and work with each other.
+
+Here are some key responsibilities of each layer. Note that we are listing only some of the responsibilities of each layer
+
+## Application Layer
+- These applications or protocols are almost always implemented in software.
+- End-users interact with the application layer.
+- The application layer is where most end-user applications such as web browsing and email live.
+- The application layer is where an outgoing message starts its journey so it provides data for the layer below.
+
+
+## Presentation Layer#
+- Presents data in a way that can be easily understood and displayed by the application layer.
+
+- Encoding is an example of such presentation. The underlying layers might use a different character encoding compared to the one used by the application layer. The presentation layer is responsible for the translation.
+- Encryption (changing the data so that it is only readable by the parties it was intended for) is also usually done at this layer.
+
+- Abstracts: the presentation layer assumes that a user session is being maintained by the lower layers and transforms content presentation to suit the application.
+
+- End-to-end Compression: The presentation layer might also implement end to end compression to reduce the traffic in the network.
