@@ -771,3 +771,134 @@ Here are some key responsibilities of each layer. Note that we are listing only 
 - Abstracts: the presentation layer assumes that a user session is being maintained by the lower layers and transforms content presentation to suit the application.
 
 - End-to-end Compression: The presentation layer might also implement end to end compression to reduce the traffic in the network.
+
+
+## Session Layer
+
+- The session layer’s responsibility is to take the services of the transport layer and build a service on top of it that **manages user sessions.**
+
+- As we will see shortly, the transport layer is responsible for transporting session layer messages across the network to the destination. The session layer must manage the mapping of messages delivered by the transport layer to the sessions.
+A session is an exchange of information between local applications and remote services on other end systems.
+
+  -For example, one session spans a customer’s interaction with an e-commerce site whereby they search, browse and select products, then make the payment and logout.
+
+- **Abstracts:** the session layer assumes that connections establishment and packet transportation is handled by the layers below it.
+
+## Transport Layer
+
+- The **transport layer** also has protocols implemented largely in software.
+
+- Since the application, presentation and session layers may be handing off large chunks of data, the transport layer segments it into smaller chunks.
+
+- These chunks are called datagrams or segments depending on the protocol used.
+
+- Furthermore, sometimes some additional information is required to transmit the segment/datagram reliably. The transport layer adds this information to the segment/datagram.
+
+- An example of this would be the checksum, which helps ensure that the message is correctly delivered to the destination, i.e. that it’s not corrupted and changed to something else on the way.
+
+- When additional information is added to the start of a segment/datagram, it’s called a header.
+
+- When additional information is appended to the end it’s called a **trailer.**
+
+
+## Network Layer
+
+- Network layer messages are termed as packets.
+
+- They facilitate the transportation of packets from one end system to another and help to determine the best routes that messages should take from one end system to another.
+
+- Routing protocols are applications that run on the network layer and exchange messages with each other to develop information that helps them route transport layer messages.
+
+- Load Balancing There are many links (copper wire, optical fiber, wireless) in a given network and one objective of the network layer is to keep them all roughly equally utilized. Otherwise, if some links are under-utilized, there will be concerns about the economic sense of deploying and managing them.
+
+
+## Data Link Layer#
+
+- Allows directly connected hosts to communicate. 
+
+- Sometimes these hosts are the only two things on a physical medium. In that case, the challenges that this layer addresses include flow control and error detection/correction.
+
+- Encapsulates packets for transmission across a single link.
+
+- Resolves transmission conflicts i.e., when two end systems send a message at the same time across one singular link.
+
+- Handles addressing If the data link is a broadcast medium, addressing is another data link layer problem,
+
+- **Multiplexing & Demultiplexing:**
+
+- Multiple data links can be multiplexed into something that appears like one, to integrate their bandwidths.
+
+- Likewise, sometimes we disaggregate a single data link into virtual data links which appear like separate network interfaces.
+
+## Physical Layer
+
+- Consists largely of hardware.
+
+- Provides a solid electrical and mechanical medium to transmit the data.
+
+- Transmits bits. Not logical packets, datagrams, or segments.
+
+- Also has to deal with mechanical specifications about the makeup of the cables and the design of the connectors.
+
+## The TCP/IP Model
+
+### Introduction
+
+- The TCP/IP Model, also known as the Internet protocol suite, was developed in 1989.
+
+- Its development was funded by DARPA (Advanced Research Projects Agency (ARPA) was renamed to the Defense Advanced Research Projects Agency (DARPA)!)
+
+- Its technical specifications are detailed in RFC 1122.
+
+- This model is primarily based upon the most protocols of the Internet, namely the Internet Protocol (IP) and the Transmission Control Protocol (TCP).
+
+- The protocols in each layer are clearly defined, unlike in the OSI model. In this course, we’ll largely adhere to the TCP/IP model and take a protocol-oriented approach.
+
+## The Layers of The TCP/IP Stack#
+
+The TCP/IP model splits up a communication system into 5 abstract layers, stacked upon each other. Each layer performs a particular service and communicates with the layers above and below itself.
+
+**Here are the five layers of the TCP/IP model:**
+
+- 1.Application Layer
+- 2.Transport Layer
+- 3.Network Layer
+- 4.Data Link Layer
+- 5.Physical Layer
+
+
+## TCP/IP vs OSI
+
+### Key Differences
+
+TCP/IP | OSI
+Is used practically | The OSI model is conceptual and is not practically used for communication
+
+Consists of five layers | Consists of seven layers
+
+
+
+
+- Elaborating further on the first point, OSI is a theoretical model and works very well for teaching purposes, but it’s far too complex for anyone to implement.
+
+- TCP/IP, on the other hand, wasn’t really a model. People just implemented it and got it to work. Then, people reverse-engineered a reference model out of it for theoretical and pedagogical purposes. So, something that “sounds like” a great idea might not be the eventual winner. It’s de facto vs de jure standards.
+
+### Differences in Layer Functionality
+
+The layers in the TCP/IP stack largely perform the same functions as their counterparts in the OSI model, except that the application layer in the TCP/IP model encompasses the functionalities of the top three layers of the OSI model.
+
+### There is No Unanimous Stack
+
+This is an example of where primary sources like RFCs clash with secondary sources like textbooks. There is, in fact, an entire table on Wikipedia dedicated to the prominent layer stacks! Regardless, we’ll be sticking to the TCP/IP model described above.
+
+### The End-To-End Argument in System Design
+
+The TCP/IP protocol suite is heavily influenced by the following design choice, also known as the end-to-end argument.
+
+Implementing intelligence in the core was too expensive, therefore, intelligence was implemented at edge devices. So, the Internet’s design was of intelligent end devices and a dumb and fast core network.
+
+### Packet Switched Core
+Furthermore, the core was made packet-switched, which means that packets are routed per-hop, so they can circumvent failures because the requirement was for resilience.
+
+With circuit-switched networks, however, torn connections have to be re-established, if there is still a path.
+
