@@ -1002,3 +1002,89 @@ Also, file sharing is not the only application of P2P. Other examples include: s
 
 ### Hybrid
 The hybrid architecture involves server involvement to some degree. It’s essentially a combination of the P2P and client-server architectures.
+
+## P2P vs. Client-Server
+
+Before we move on with the details of BitTorrent, it's useful to do a quantitative comparison of the P2P architecture with the client-server architecture.
+
+
+## Quantitative Comparison of P2P with Client-Server#
+
+Let’s calculate how long it will take to transmit a file from one server to a number of clients based on both the P2P and server-client architectures. The calculations will be performed based on the following givens.
+
+- A server that can upload at a rate of ups where ups is the upload speed in bits/second.
+
+- There are N clients all wanting to download the same file from the server. Client i can upload at a rate of upi bits/second and download at a rate of dwni bits/second.
+- The size of the file that all the peers want is 
+S.
+
+## Client-Server
+
+Let’s start with the client-server architecture. The following can be observed.
+
+- Since N clients each want a file of size S, the server will have to upload NS The upload rate of the server is ups so the server will take at leas time to transmit the file to all N clients.
+
+- The client with the lowest download rate (dwn 
+min will take at least ​time to download the full file.
+
+So, in total the time taken to transmit the file will be the maximum of both of the times above, i.e.:
+
+## How Processes Communicate
+
+
+## Program vs. Process vs. Thread
+
+We’ve loosely used the term ‘process’ pretty much interchangeably with the term ‘application’ in the last few chapters. Now, let’s now get a finer definition.
+
+- A program is simply an executable file. An application such as MS Word is one example.
+
+- A process is any currently running instance of a program. So one program can have several copies of it running at once. One MS Word program can have multiple open windows.
+
+- A thread is a lightweight process. One process can have multiple running threads. The difference between threads and processes is that threads do lightweight singular jobs.
+
+Processes that exist on the same machine can and do regularly communicate with each other following the rules of the machine’s OS. However, we are more interested in how processes that run on different machines communicate.
+
+## Sockets #
+
+Processes on different machines send messages to each other through the computer network. The interface between a process and the computer network is called a socket. Note that sockets do not have anything to do with hardware – they are software interfaces.
+
+Processes simply direct their messages to sockets and don’t worry about it after that.
+
+## Addressing 
+
+Messages have to be addressed to a certain application on a certain end system. How is it done with potentially millions of end systems and hundreds of applications on each of them?
+
+Well, it’s done via addressing constructs like IP addresses and ports. While both were touched upon previously, we would like to reintroduce ports a bit more in-depth.
+
+## Ports
+
+Since every end-system may have a number of applications running, ports are used to address the packet to specific applications. As stated previously, some ports are reserved such as port 80 for HTTP and port 443 for HTTPS.
+
+### An Analogy: Post
+
+Continuing with our post analogy, you can think of an end-system like a large apartment complex. Each apartment in the complex is an application.
+
+The mailing address of the complex is like the IP address of the end-system. All running applications share it, just like all apartments share the street address.Each application running on a host has a different port number, just like each apartment has a different apartment number.
+
+### Ephemeral Ports
+
+The port that an application will use is usually predefined by its application developers. So an application can have port 3000 reserved for it. But what if several instances (processes) of an application are running at once? How will the system address those processes?
+
+Furthermore, server processes need to have well defined and fixed port numbers so that clients can connect to them in a systematic and predictable way. However, clients don’t need to have reserved ports. They can use ephemeral ports. Servers can also use ephemeral ports in addition to the reserved ones. For instance, a client makes the initial connection to the server on a well-known port and the rest of the communication is carried out by connecting to an ephemeral port on the server.
+
+## HTTP: The Basics
+
+## Introduction
+
+
+The Internet was an obscure set of methods for file transfer and email used by academics and researchers. The World Wide Web was invented to allow the European research organization CERN to present documents linked by hypertexts. All of that changed though when it caught the public’s eye and popularized the Internet. The web was different from other services such as cable television, because it served content based on demand. People could watch what they wanted. HTTP or HyperText Transfer Protocol is the protocol at the core of the web.
+
+## Objects
+
+- Web pages are objects that consist of other objects.
+
+- An object is simply a file like an HTML file, PNG file, MP3 file, etc.
+
+- Each object has a URL
+
+- The base object of a web page is often an HTML file that has references to other objects by making requests for them via their URL.
