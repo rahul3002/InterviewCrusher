@@ -1167,4 +1167,145 @@ An HTTP session typically involves multiple HTTP request-response pairs, for whi
 
 Typically, if there have been no requests for a while, the server closes the connection. The duration of time before the server closes the connection is configurable.
 
+## HTTP: Request Messages
 
+### Introduction
+There are two types of HTTP messages as discussed previously:
+
+- HTTP request messages
+
+- HTTP response messages
+
+### HTTP Request Messages
+
+Here is an example of a typical HTTP message:
+
+```
+GET /path/to/file/index.html HTTP/1.1
+Host: www.educative.io
+Connection: close
+User-agent: Mozilla/5.0
+Accept-language: fr
+Accept: text/html
+```
+
+It should be noted that,
+
+- HTTP messages are in plain ASCII text
+
+- Each line of the message ends with two control characters: a carriage return and a line feed:
+r\n.
+
+- The last line of the message also ends with a carriage return and a line feed!
+
+- This particular message has 6 lines, but HTTP messages can have one or as many lines as needed.
+
+- The first line is called the request line while the rest are called header lines.
+
+### The Anatomy of an HTTP Request Line
+
+The HTTP request line is followed by an HTTP header. We’ll look at the request line first. The request line consists of three parts:
+
+- Method
+
+- URL
+
+- Version
+
+## Exercise: Looking at a Real HTTP Request
+
+### Open up the Developer Tools on Your Browser#
+
+Have a look at this GIF. We were on Firefox here.
+
+- 1.Navigate to any website. We picked google.com.
+
+- 2.Right-click anywhere.
+
+- 3.Click on ‘inspector tools’ in the drop-down menu.
+
+The process should be similar for other browsers.
+
+### Go to the Network Tab#
+
+- The network tab should be one of the tabs on the top-bar (or sidebar in some browsers).
+
+- Find it and click on it.
+
+- There may be a chance that your browser hasn’t logged any network calls. In that case, just reload the page.
+
+### Click on Any Entry#
+
+- You’ll see a bunch of calls. Click on any one of them.
+
+- You’ll see details about the HTTP message including the request headers, the kind of request, and the headers. We encourage you to spend some time exploring this.
+
+## HTTP: Response Messages
+
+### Introduction
+
+```
+HTTP/1.1 200 OK
+Connection: close
+Date: Tue, 18 Aug 2015 15: 44 : 04 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Tue, 18 Aug 2015 15:11:03 GMT 
+Content-Length: 6821
+Content-Type: text/html
+
+[The object that was requested]
+```
+
+It has 3 parts: an initial status line, some header lines and an entity body.
+
+> 📝 Note: HTTP response messages don’t have the URL or the method fields. Those are strictly for request messages.
+
+## Status Line#
+- HTTP response status lines start with the HTTP version.
+
+## Status Code#
+
+- The status code comes next which tells the client if the request succeeded or failed.
+- There are a lot of status codes:
+
+- 1xx codes fall in the informational category
+- 2xx codes fall in the success category
+- 3xx codes are for redirection
+- 4xx is client error
+- 5xx is server error
+
+Here is a list of some common status codes and their meanings:
+
+- 200 OK: the request was successful, and the result is appended with the response message.
+
+- 404 File Not Found: the requested object doesn’t exist on the server.
+
+- 400 Bad Request: generic error code that indicates that the request was in a format that the server could not comprehend.
+
+- 500 HTTP Internal Server Error: the request could not be completed because the server encountered some unexpected error.
+
+- 505 HTTP Version Not Supported: the requested HTTP version is not supported by the server.
+
+Have a look at pages 39 and 40 of RFC 2616 for a comprehensive list
+
+## Header Lines#
+
+Let’s study the header lines.
+
+- Connection type. In this case, indicates that the server will close the TCP connection after it sends the response.
+
+- Date. The date at which the response was generated.
+
+- Server. Gives server software specification of the server that generated the message. Apache in this case.
+
+- Last-Modified. The date on which the object being sent was last modified.
+
+- Content-Length. The length of the object being sent in 8-bit bytes.
+
+- Content-Type. The type of content. The type of the file is not determined by the file extension of the object, but by this header.
+
+- The response body contains the file requested.
+
+## How HTTP Headers Are Chosen#
+
+Lastly, you must be wondering how browsers decide which HTTP headers to include in requests and how servers decide which headers to return in the response. That depends on a complex mix of factors such as the browser, the user configurations and products.
