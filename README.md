@@ -65,7 +65,7 @@ Here are some resources to help you with this stage:
     
     After the interview, it's important to follow up with the company to thank them for the opportunity and express your interest in the role. You can do this by sending a thank-you email or LinkedIn message to the interviewer or hiring manager.
     
-    ## **Stage 6: **Operating System**
+    ## Stage 6: **Operating System**
 
 * Processes and threads
     
@@ -85,7 +85,7 @@ Here are some resources to help you with this stage:
 * [**Operating Systems course on Coursera**](https://www.coursera.org/courses?query=operating%20systems)
     
 
-## **Stage 7: **System Design**
+## Stage 7: **System Design**
 
 * Load balancing
     
@@ -107,7 +107,7 @@ Here are some resources to help you with this stage:
 * [**Scalability, Availability, and Stability Patterns**](https://www.aosabook.org/en/distsys.html) (online book)
     
 
-## **Stage 8: **Data Structures**
+## Stage 8: **Data Structures**
 
 * Arrays
     
@@ -122,7 +122,7 @@ Here are some resources to help you with this stage:
 * Graphs
     
 
-### **Resources**
+### Resources
 
 * [**Data Structures and Algorithms course on Coursera**](https://www.coursera.org/courses?query=data%20structures%20and%20algorithms)
     
